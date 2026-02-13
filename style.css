@@ -1,0 +1,192 @@
+/* ================= GENERAL ================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #ffe6ef; /* rosa suave */
+    overflow-x: hidden;
+}
+
+/* ================= PANTALLA DE PREGUNTA ================= */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 182, 193, 0.85); /* rosa romántico */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+.question-box {
+    background: #fff0f5; /* blanco rosado suave */
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
+}
+
+.yes, .no {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 5px;
+    transition: transform 0.2s;
+}
+
+.yes { background: #ff4f80; color: white; }
+.no { background: #ffc0cb; color: white; }
+
+.yes:hover, .no:hover { transform: scale(1.1); }
+
+/* ================= CONTENIDO PRINCIPAL ================= */
+#main-content {
+    display: none;
+    text-align: center;
+    padding-top: 40px;
+    transform: scale(0.5);
+    transition: transform 0.4s ease;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe6ef, #ffb6c9);
+    overflow: hidden;
+    position: relative;
+}
+
+/* ================= CONTADOR ================= */
+#love-counter {
+    font-size: 22px;
+    color: #ff4f80;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+/* ================= PARTICULAS ================= */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff4f80; /* rojo romántico */
+    border-radius: 50%;
+    opacity: 0.8;
+    animation-name: floatParticle;
+    animation-iteration-count: infinite;
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+/* ================= GALERÍA ================= */
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.photo-card {
+    width: 160px;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.photo-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.photo-card.flipped .photo-inner { transform: rotateY(180deg); }
+
+.photo-front, .photo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+}
+
+.photo-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photo-back {
+    background: #ff4f80; /* rojo rosa intenso */
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    text-align: center;
+    transform: rotateY(180deg);
+    border-radius: 12px;
+}
+
+/* ================= FRASE CENTRAL ================= */
+.center-phrase {
+    font-size: 22px;
+    width: 80%;
+    margin: 20px auto;
+    line-height: 1.4;
+    font-weight: bold;
+    color: #ff1a75; /* rosa intenso */
+}
+
+/* ================= MÁQUINA DE ESCRIBIR ================= */
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ff4f80;
+    width: 0;
+    animation: typing 4s steps(60) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing { from { width: 0; } to { width: 100%; } }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* ================= BOTÓN MÚSICA ================= */
+#music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff4f80;
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    transition: transform 0.2s ease;
+}
+
+#music-btn:hover { transform: scale(1.1); }
