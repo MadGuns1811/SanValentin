@@ -190,3 +190,53 @@ body {
 }
 
 #music-btn:hover { transform: scale(1.1); }
+
+/* ================= RESPONSIÓN MÓVIL ================= */
+@media (max-width: 600px) {
+
+    /* Ajustar fuente del contador y frase central */
+    #love-counter h2 {
+        font-size: 18px;
+    }
+
+    .center-phrase {
+        font-size: 18px;
+        width: 90%;
+    }
+
+    /* Galería: tarjetas más pequeñas y con menos espacio */
+    .photo-card {
+        width: 120px;
+        height: 150px;
+    }
+
+    .photo-back {
+        font-size: 16px;
+    }
+
+    /* Pantalla de pregunta */
+    .question-box {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .yes, .no {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    /* Botón de música más pequeño */
+    #music-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    /* Partículas más pequeñas */
+    .particle {
+        width: 6px;
+        height: 6px;
+    }
+}
